@@ -1,0 +1,23 @@
+/* bugSolution.css */
+.container {
+  display: flex;
+}
+
+.item {
+  /* The fix involves using the available space explicitly, or employing other techniques to resolve layout conflicts.*/
+  flex: 1;
+  /* instead of using directly calc to find height of item, now we use available space, which is better for flexible layout */
+  min-height: calc(100vh - 10px);
+  border: 1px solid black;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/*Alternative Solution using min-content or max-content
+.item{
+  flex:1;
+  min-height:min-content;
+  max-height:max-content;
+  border:1px solid black; 
+  box-sizing: border-box;
+}
+*/
